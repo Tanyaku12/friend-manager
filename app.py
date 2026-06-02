@@ -739,7 +739,7 @@ def accept_friend():
     except ValueError:
         _add_log(False, "Accept invalid UID")
         return jsonify(OrderedDict([("success", False), ("error", "UID must be a number")])), 400
-    url = "https://clientbp.polarbear.com/ConfirmFriendRequest"
+    url = "https://clientbp.ggpolarbear.com/ConfirmFriendRequest"
     headers = GAME_HEADERS.copy()
     headers['Authorization'] = jwt if jwt.startswith("Bearer") else f"Bearer {jwt}"
     try:
@@ -778,7 +778,7 @@ def reject_friend():
     except ValueError:
         _add_log(False, "Reject invalid UID")
         return jsonify(OrderedDict([("success", False), ("error", "UID must be a number")])), 400
-    url = "https://clientbp.polarbear.com/DeclineFriendRequest"
+    url = "https://clientbp.ggpolarbear.com/DeclineFriendRequest"
     headers = GAME_HEADERS.copy()
     headers['Authorization'] = jwt if jwt.startswith("Bearer") else f"Bearer {jwt}"
     try:
