@@ -161,7 +161,7 @@ def get_complete_friends_json(token: str) -> OrderedDict:
     payload = b'\x59\x8F\xCA\xF0\x78\x39\x30\x8F\xF2\x87\xAC\xA3\xAE\x0A\x06\x17'
     try:
         resp = requests.post(
-            "https://clientbp.polarbear.com/GetFriend",
+            "https://clientbp.ggpolarbear.com/GetFriend",
             headers=headers,
             data=payload,
             timeout=10
@@ -629,7 +629,7 @@ def add_friend():
     payload = {"1": 15618305639, "2": uid_int, "3": 24, "4": 8}
     try:
         result = send_encrypted_request(
-            "https://clientbp.polarbear.com/RequestAddingFriend", payload, jwt
+            "https://clientbp.ggpolarbear.com/RequestAddingFriend", payload, jwt
         )
         status = result["status_code"]
         if status == 200:
@@ -658,7 +658,7 @@ def remove_friend():
     payload = {"1": 15618305639, "2": uid_int}
     try:
         result = send_encrypted_request(
-            "https://clientbp.polarbear.com/RemoveFriend", payload, jwt
+            "https://clientbp.ggpolarbear.com/RemoveFriend", payload, jwt
         )
         status = result["status_code"]
         if status == 200:
